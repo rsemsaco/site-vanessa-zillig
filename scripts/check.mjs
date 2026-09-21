@@ -18,6 +18,8 @@ const checks = [
   ['portrait image markup', index.includes('./assets/vanessa-zillig-portrait.png')],
   ['portrait alt text', index.includes('alt="Retrato profissional de Vanessa Zillig"')],
   ['hero portrait class', index.includes('class="hero-photo"')],
+  ['about portrait class', index.includes('class="about-photo"')],
+  ['portrait appears twice', (index.match(/vanessa-zillig-portrait\.png/g) || []).length >= 2],
   ['hero monogram removed', !index.includes('class="monogram-card"')],
   ['reduced motion', styles.includes('prefers-reduced-motion')],
   ['mobile breakpoint', styles.includes('@media (max-width: 520px)')],
