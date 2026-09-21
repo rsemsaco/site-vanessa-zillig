@@ -320,6 +320,7 @@ p { color: var(--muted); }
 .hero-art {
   display: grid;
   place-items: center;
+  transform: translateY(-110px);
 }
 
 .hero-photo-shell {
@@ -893,6 +894,7 @@ p { color: var(--muted); }
   .site-nav .button { margin-top: 16px; }
 
   .hero-grid { grid-template-columns: 1fr .7fr; gap: 32px; }
+  .hero-art { transform: translateY(-72px); }
   .card-grid--four { grid-template-columns: repeat(2, 1fr); }
   .evidence-layout { gap: 40px; }
   .section-heading--row { gap: 30px; }
@@ -921,7 +923,10 @@ p { color: var(--muted); }
 
   .hero-grid { grid-template-columns: 1fr; }
   .hero-copy { max-width: 620px; }
-  .hero-art { margin-top: 20px; }
+  .hero-art {
+    margin-top: 8px;
+    transform: translateY(-28px);
+  }
   .hero-photo-shell { width: min(88vw, 390px); }
   .hero-orbit--one { right: -580px; }
   .hero-orbit--two { left: -390px; }
