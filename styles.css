@@ -670,42 +670,27 @@ p { color: var(--muted); }
 
 .about-art {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.about-shape {
+.about-photo-frame {
   position: relative;
   width: min(100%, 420px);
-  aspect-ratio: .88;
-  display: grid;
-  place-items: center;
-  border-radius: 46% 54% 55% 45% / 58% 42% 58% 42%;
-  background: var(--pink-200);
+  aspect-ratio: 4 / 5;
   overflow: hidden;
+  border: 1px solid rgba(146,78,104,.14);
+  border-radius: 34px;
+  background: var(--pink-200);
+  box-shadow: var(--shadow);
 }
 
-.about-shape > span {
-  position: relative;
-  z-index: 2;
-  color: var(--pink-800);
-  font-family: var(--font-serif);
-  font-size: 8rem;
-  font-style: italic;
-}
-
-.about-shape svg {
-  position: absolute;
-  inset: -8%;
-  width: 116%;
-  height: 116%;
-  color: rgba(116,58,80,.28);
-}
-
-.photo-note {
-  margin: 16px 0 0;
-  font-size: .72rem;
-  font-style: italic;
+.about-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .about-copy { max-width: 650px; }
