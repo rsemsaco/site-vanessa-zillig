@@ -6,6 +6,7 @@ const files = [
   'privacy.html',
   'styles.css',
   'script.js',
+  'analytics-config.js',
   'favicon.svg',
   'robots.txt',
   'sitemap.xml'
