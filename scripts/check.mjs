@@ -4,6 +4,8 @@ const index = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 const styles = await readFile(new URL('../styles.css', import.meta.url), 'utf8');
 const robots = await readFile(new URL('../robots.txt', import.meta.url), 'utf8');
 const sitemap = await readFile(new URL('../sitemap.xml', import.meta.url), 'utf8');
+const privacy = await readFile(new URL('../privacy.html', import.meta.url), 'utf8');
+const analyticsConfig = await readFile(new URL('../analytics-config.js', import.meta.url), 'utf8');
 
 const checks = [
   ['lang pt-BR', index.includes('lang="pt-BR"')],
@@ -24,7 +26,15 @@ const checks = [
   ['reduced motion', styles.includes('prefers-reduced-motion')],
   ['mobile breakpoint', styles.includes('@media (max-width: 520px)')],
   ['robots sitemap', robots.includes('Sitemap:')],
-  ['sitemap root', sitemap.includes('site-vanessa-zillig/')]
+  ['custom domain canonical', index.includes('https://vanessazillig.com/')],
+  ['custom domain og:url', index.includes('property="og:url" content="https://vanessazillig.com/"')],
+  ['robots custom sitemap', robots.includes('https://vanessazillig.com/sitemap.xml')],
+  ['sitemap custom domain', sitemap.includes('https://vanessazillig.com/')],
+  ['no old Pages URL in SEO files', !index.includes('rsemsaco.github.io/site-vanessa-zillig') && !robots.includes('rsemsaco.github.io/site-vanessa-zillig') && !sitemap.includes('rsemsaco.github.io/site-vanessa-zillig')],
+  ['analytics config loaded', index.includes('./analytics-config.js')],
+  ['GA4 config placeholder', analyticsConfig.includes("measurementId: ''")],
+  ['lead event tracking', (await readFile(new URL('../script.js', import.meta.url), 'utf8')).includes("'generate_lead'")],
+  ['privacy analytics disclosure', privacy.includes('Google Analytics 4 (GA4)')]
 ];
 
 const failed = checks.filter(([, ok]) => !ok);

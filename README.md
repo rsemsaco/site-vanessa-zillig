@@ -42,10 +42,7 @@ O build gera a pasta `dist/`.
 
 ## Conteúdo pendente antes da publicação final
 
-- CRP completo
 - localização/região do atendimento presencial
-- foto profissional aprovada
-- domínio personalizado, se aplicável
 - revisão final da profissional sobre formação, experiência e escopo clínico
 
 ## GitHub Pages
@@ -66,8 +63,19 @@ Incluídos:
 - headings semânticos
 - idioma `pt-BR`
 
-Os URLs canônicos atuais usam o endereço provisório do GitHub Pages e deverão ser atualizados quando houver domínio próprio.
+Domínio canônico configurado no código: `https://vanessazillig.com/`.
+
+## Search Console
+
+O site está pronto para uma propriedade de domínio `vanessazillig.com` no Google Search Console. A verificação recomendada é via registro TXT no DNS do Cloudflare. Após a verificação, enviar `https://vanessazillig.com/sitemap.xml`.
 
 ## Analytics
 
-GA4 não foi ativado nesta etapa. Antes da ativação, definir os eventos e atualizar a política de privacidade, quando necessário.
+A integração de GA4 está preparada, mas permanece inativa até que um Measurement ID válido seja inserido em `analytics-config.js`.
+
+Eventos preparados:
+
+- `page_view` via configuração padrão do GA4
+- `generate_lead` em cliques de WhatsApp, com `method=whatsapp` e posição do CTA
+
+O Analytics só é carregado após consentimento do visitante. Nenhum conteúdo clínico ou texto de mensagem é enviado intencionalmente ao GA4.
