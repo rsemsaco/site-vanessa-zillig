@@ -32,7 +32,7 @@ const checks = [
   ['sitemap custom domain', sitemap.includes('https://vanessazillig.com/')],
   ['no old Pages URL in SEO files', !index.includes('rsemsaco.github.io/site-vanessa-zillig') && !robots.includes('rsemsaco.github.io/site-vanessa-zillig') && !sitemap.includes('rsemsaco.github.io/site-vanessa-zillig')],
   ['analytics config loaded', index.includes('./analytics-config.js')],
-  ['GA4 config placeholder', analyticsConfig.includes("measurementId: ''")],
+  ['GA4 measurement ID', analyticsConfig.includes("measurementId: 'G-QYEY4RXG90'")],
   ['lead event tracking', (await readFile(new URL('../script.js', import.meta.url), 'utf8')).includes("'generate_lead'")],
   ['privacy analytics disclosure', privacy.includes('Google Analytics 4 (GA4)')]
 ];
