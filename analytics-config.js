@@ -1,3 +1,3 @@
 window.VZ_ANALYTICS_CONFIG = {
-  measurementId: ''
+  measurementId: 'G-QYEY4RXG90'
 };
